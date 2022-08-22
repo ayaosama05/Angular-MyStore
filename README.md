@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Products List Page : show all products in store with ability to add it to cart.
 - Each Product details page : show a small description and price with ability to add it to shopping cart.
-- Shopping cart : show The User order with ability to modify quantity and confirm order by adding payment details.
+- Shopping cart : show The User order with ability to modify quantity , delete Item and confirm order by adding payment details.
 - Checkout form : collects main user info to complete order with validation messages.
 - Success Page : shows a success message with total price after submit order.
 - error Page : custom error page if URL is not found.
@@ -18,7 +18,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo
 
-![MyStore Demo](https://github.com/ayaosama05/Angular-MyStore/blob/master/Demo/MyStore.gif)
+![MyStore Demo](https://github.com/ayaosama05/Angular-MyStore/blob/master/Demo/Store.gif)
 
 ## Built with
 
