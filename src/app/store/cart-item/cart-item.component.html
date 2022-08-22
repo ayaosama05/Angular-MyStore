@@ -1,0 +1,17 @@
+<div class="card m-1">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="cart.Product.url" class="img-fluid" alt="Item image" />
+      </div>
+      <div class="col-md-8 text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{ cart.Product.name }}</h5>
+          <p class="card-text">{{ cart.Product.price | currency }}</p>
+          Amount : <input type="number" name="ItemQuantity" class="form-control"
+          [(ngModel)]="cart.ItemQuantity"
+          (ngModelChange)="QuantityChanged($event)" 
+          />
+        </div>
+      </div>
+    </div>
+  </div>

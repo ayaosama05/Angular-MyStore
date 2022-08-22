@@ -1,0 +1,16 @@
+<div class="col-md-8 m-auto">
+    <div class="text-center  mt-5">
+        <i class="bi bi-check-circle-fill success-icon"></i>
+
+        <p>Thank You, {{ order.CustomerInfo.FullName }} ! </p>
+        <p>Your order is confirmed with total price : {{ order.TotalPrice | currency }} ! </p>
+        <p>It'll take 1-5 Working days to receive your order.</p>
+        
+        <a routerLink="/" class="mt-3 btn btn-primary">
+            <i class="bi bi-arrow-left"></i> Back to home page !
+          </a>
+    </div>
+</div>
+
+
+

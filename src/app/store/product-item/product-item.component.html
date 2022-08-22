@@ -1,0 +1,23 @@
+<div class="card text-center">
+  <a [routerLink]="['products/details/',product.id]">
+    <img [src]="product.url" class="card-img-top p-4" alt="Item image" />
+  </a>
+  <div class="card-body">
+    <h6 class="card-title">{{ product.name }}</h6>
+    <p class="card-text">{{ product.price | currency}}</p>
+    <div class="d-flex flex-column">
+      <select
+        class="form-select m-auto"
+        aria-label="Default select example"
+        style="width: 50%" name="list" [(ngModel)]="selectedOption"
+      >
+        <option *ngFor="let item of listOptions" [value]="item.id">
+          {{item.name}}
+        </option>
+      </select>
+      <button class="btn btn-primary m-auto mt-3" style="width: 50%" (click)="addToCart(product,selectedOption)"
+        >Add to cart</button
+      >
+    </div>
+  </div>
+</div>

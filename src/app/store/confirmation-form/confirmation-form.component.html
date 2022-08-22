@@ -1,0 +1,76 @@
+<p>Please fill the following to complete the order!</p>
+
+<form (ngSubmit)="SubmitForm()" #Paymentform="ngForm">
+  <div class="mb-2">
+    <label class="form-label">Full Name:</label>
+    <input
+      #fullName="ngModel"
+      class="form-control"
+      placeholder="(minmium 3 characters)"
+      minlength="3"
+      required
+      [(ngModel)]="PForm.FullName"
+      name="PForm.FullName"
+    />
+    <div *ngIf="fullName.invalid && fullName.dirty">
+      <p *ngIf="fullName.errors?.['required']" class="text-danger">
+        Your Name is required !!
+      </p>
+      <p *ngIf="fullName.errors?.['minlength']" class="text-danger">
+        Minimun length is 3 characters
+      </p>
+    </div>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Address:</label>
+    <input
+      #CustomerAddress="ngModel"
+      class="form-control"
+      placeholder="(minimum 6 characters)"
+      minlength="6"
+      required
+      [(ngModel)]="PForm.Address"
+      name="PForm.Address"
+    />
+    <div *ngIf="CustomerAddress.invalid && CustomerAddress.dirty">
+        <p *ngIf="CustomerAddress.errors?.['required']" class="text-danger">
+            Your address is required !!
+        </p>
+        <p *ngIf="CustomerAddress.errors?.['minlength']" class="text-danger">
+            Minimum length for address is 6 characters.
+        </p>
+    </div>
+  </div>
+  <div class="mb-2">
+    <label class="form-label">Credit Card Number:</label>
+    <input
+      #CreditCard="ngModel"
+      class="form-control"
+      pattern="[0-9]{16}"
+      placeholder="(16-digit number)"
+      required
+      [(ngModel)]="PForm.CreditCardNumber"
+      name="PForm.CreditCardNumber"
+    />
+    <div *ngIf="CreditCard.invalid && CreditCard.dirty">
+        <p *ngIf="CreditCard.errors?.['required']" class="text-danger">
+            Please enter your credit card number to complete your order
+        </p>
+        <p *ngIf="CreditCard.errors?.['pattern']" class="text-danger">
+            This field must be 16 digits only
+        </p>
+    </div>
+  </div>
+
+  <p class="text-muted">
+    We'll not share your payment details with anyone else.
+  </p>
+
+  <button
+    type="submit"
+    class="btn btn-success d-block"
+    [disabled]="Paymentform.invalid"
+  >
+    Submit
+  </button>
+</form>
