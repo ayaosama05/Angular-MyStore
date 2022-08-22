@@ -27,7 +27,19 @@ export class CartComponent implements OnInit {
   //  console.log("Inside Cart");
     let index = this.cartList.findIndex(elm => elm.Product == cart.Product);
     this.cartList[index] = cart;
-    this.totalPrice = this.cartService.GetTotalCartProice(this.cartList);
+    this.UpdateTotalPrice();
  //   this.posts = this.posts.filter(a => a.id !== post.id);
+  }
+
+  ReomveItemCart(cart:cart):void{
+    let index = this.cartList.indexOf(cart);
+    if(index !== -1){
+      this.cartList.splice(index,1);
+    }
+    this.UpdateTotalPrice();
+  }
+
+  UpdateTotalPrice(){
+    this.totalPrice = this.cartService.GetTotalCartProice(this.cartList);
   }
 }

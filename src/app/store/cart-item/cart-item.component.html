@@ -7,11 +7,16 @@
         <div class="card-body">
           <h5 class="card-title">{{ cart.Product.name }}</h5>
           <p class="card-text">{{ cart.Product.price | currency }}</p>
-          Amount : <input type="number" name="ItemQuantity" class="form-control"
+          Amount : <input type="number" name="ItemQuantity" class="form-control" min="1"
           [(ngModel)]="cart.ItemQuantity"
           (ngModelChange)="QuantityChanged($event)" 
           />
         </div>
+      </div>
+      <div class="col-md-12 card-footer  text-center">
+        <button type="button" class="btn btn-danger" aria-label="Close" (click)="RemoveItemFromCart(cart)">
+          Remove from cart  <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     </div>
   </div>

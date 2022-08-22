@@ -10,6 +10,7 @@ export class CartItemComponent implements OnInit {
 
   @Input() cart:cart= new cart();
   @Output() UpdateCart = new EventEmitter<cart>();
+  @Output() ReomveItemCart = new EventEmitter<cart>();
 
   constructor() { }
 
@@ -24,5 +25,10 @@ export class CartItemComponent implements OnInit {
     };
     this.UpdateCart.emit(this.cart);
    // console.log("Event fired !");
+  }
+
+  RemoveItemFromCart(obj:cart){
+    this.ReomveItemCart.emit(obj);
+    alert("Item has been removed from cart successfully !");
   }
 }
