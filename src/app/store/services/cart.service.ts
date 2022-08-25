@@ -17,6 +17,7 @@ export class CartService {
       ItemQuantity:quantity
     };
     this.cartList.push(Newcart);
+    this.SaveCart(this.cartList);
     return Newcart;
   }
 
@@ -37,10 +38,16 @@ export class CartService {
       ItemQuantity:newQuantity
     };
     this.cartList.splice(index, 0, Newcart);
+    this.SaveCart(this.cartList);
     return Newcart;
   }
 
   GetCartList(){
+    const cart = localStorage.getItem('cart');
+
+    if(cart){
+        this.cartList = JSON.parse(cart);
+    }
     return this.cartList;
   }
 
@@ -59,4 +66,9 @@ export class CartService {
     });
     return totalPrice;
   }
+
+  SaveCart(cart:cart[]){
+    localStorage.setItem('cart', JSON.stringify(cart));
+  }
+
 }
