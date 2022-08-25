@@ -14,7 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - Checkout form : collects main user info to complete order with validation messages.
 - Success Page : shows a success message with total price after submit order.
 - error Page : custom error page if URL is not found.
-
+- Save Cart in Local Storage so even if the browser get closed data order will be saved.
 
 ## Demo
 
