@@ -32,10 +32,7 @@ export class CartComponent implements OnInit {
   }
 
   ReomveItemCart(cart:cart):void{
-    let index = this.cartList.indexOf(cart);
-    if(index !== -1){
-      this.cartList.splice(index,1);
-    }
+    this.cartService.DeleteItemFromCart(cart);
     this.UpdateTotalPrice();
   }
 

@@ -42,6 +42,14 @@ export class CartService {
     return Newcart;
   }
 
+  DeleteItemFromCart(cart:cart){
+    let index = this.cartList.indexOf(cart);
+    if(index !== -1){
+      this.cartList.splice(index,1);
+      this.SaveCart(this.cartList);
+    }
+  }
+
   GetCartList(){
     const cart = localStorage.getItem('cart');
 
